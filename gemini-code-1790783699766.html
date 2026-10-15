@@ -143,18 +143,7 @@
         return;
       }
       
-      // Treat the date input as a strict local midnight time
-      const target = new Date(targetDateString + 'T00:00:00');
       
-      // Get today's date and strip the exact time so it accurately measures full days
-      const now = new Date();
-      now.setHours(0, 0, 0, 0);
-
-      // Subtract today from target date
-      const differenceInMilliseconds = target.getTime() - now.getTime();
-      
-      // Convert milliseconds into days
-      let days = Math.ceil(differenceInMilliseconds / (1000 * 3600 * 24));
 
       // Prevent the counter from going into negative numbers if the date has passed
       if (days < 0) days = 0;
